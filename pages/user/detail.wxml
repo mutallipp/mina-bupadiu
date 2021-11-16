@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<view class="container" hidden="{{loadingMoreHidden ? false : true}}" >
+  <!--搜索框-->
+  <view  class="search-view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(105,195,170, 1), rgba(105,195,170, 0.3))' :( scrollTop<200 ? 'rgba(105,195,170,'+(scrollTop/400+0.3) +')' : 'rgba(105,195,170,1)')  }} ">
+    <view class="search-content">
+      <image src="/images/search-pic.png" class="search-icon" />
+      <textarea auto-height placeholder="请输入卡号搜索" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' value='{{searchInput}}'>
+      </textarea>
+      <button class='search-btn' bindtap="toSearch">搜索</button>
+    </view>
+  </view>
+  
+<!-- 结果显示 -->
+ <view class="container"  wx:if="{{content}}">
+    <view class="order-list">
+        <view class="a-order" >
+            <view class="order-date" wx:if="{{card_number}}">
+                <view class="date-box">卡号:{{card_number}}</view>   
+            </view>
+            <view class="goods-info" wx:if="{{content}}" >
+                <view class="goods-des">
+                   <view>{{content}} </view>
+                </view>
+            </view> 
+            <view >
+                <scroll-view class="goods-img-container" scroll-x="true">
+                    <view class="img-box" data-url='{{picture}}' bindtap='click_image' >
+                        <image src="{{picture}}" class="goods-img"></image>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="price-box" wx:if="{{user_phone}}" bindtap='makephone'>
+                <view class="total-price">{{user_phone}}</view>
+                <!-- <view class="btn cancel-btn">取消订单</view> -->
+                <view  >联系Ta</view>
+            </view> 
+            <view class="price-box" wx:if="{{send_msg}}" bindtap='sendMsg'>
+                <view class="total-price">点击这里给对方发提醒信息</view>
+                <!-- <view class="btn cancel-btn">取消订单</view> -->
+                <!-- <view  >联系Ta</view> -->
+            </view>
+            <view class="price-box" wx:if="{{upload}}" bindtap='toUpload'>
+                <view class="total-price">点击这里上传这张一卡通吧~~~~</view>
+                <!-- <view class="btn cancel-btn">取消订单</view> -->
+                <!-- <view  >点击这里上传这张一卡通吧~~</view> -->
+            </view> 
+        </view>
+
+    </view>
+  </view>
+
+</view>

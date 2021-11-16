@@ -1,0 +1,15 @@
+<!--pages/my/us.wxml-->
+<view>
+  <text class='title'>不怕丢</text>
+  <view>
+    <text class='intruduction'decode="{{true}}">基于P2P 速度最快的一卡通查找平台</text>
+    <text class='content'decode="{{true}}">\n对于失主：
+    1.当您丢失一卡通（或者校园卡，以下简称 “卡”）时，打开 “开放查找联系方式”（注：按钮在“我的-我的信息”里面）按钮以便拾物者通过“卡号”查找您的联系方式。
+2.当拾物者捡到卡但没有联系你，只是上传到本平台时，您可以通过自己的卡号查找拾物者的联系方式。\n</text>
+    <text class='content'decode="{{true}}">\n对于拾物者:
+    1.当您捡到卡时，您可以通过本平台查找失主的联系方式联系联系失主。
+2.当您联系不到失主或者其他原因，可以把卡上传到本平台以便失主联系您。</text>
+<text class='bot'decode="{{true}}">管理员联系邮箱：mutallip@bupt.edu.cn</text>
+  </view>
+</view>
+

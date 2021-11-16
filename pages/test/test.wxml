@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<form bindsubmit='submit' report-submit="true" >
+ <button  type="warn" class="save-btn" formType="submit">立即发布</button>
+</form>

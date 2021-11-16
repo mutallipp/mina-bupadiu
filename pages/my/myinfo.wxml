@@ -1,0 +1,37 @@
+<view class="container">
+    <form bindsubmit="bindSave" report-submit="true">
+    <view class="form-box">
+        <!-- <view class="addr-details">
+            <view class="label">姓名</view>
+            <view class="label-right">
+                <input name="name" auto-height placeholder="请输入姓名"  value="{{ob.name}}"/>
+            </view>
+        </view> -->
+        <view class="addr-details">
+            <view class="label">学号</view>
+            <view class="label-right">
+                <input name="number" auto-height placeholder="请输入学号"  value="{{ob.number}}"/>
+            </view>
+            <!-- <view class="saomiao" bindtap='saomiao' >扫描一卡通</view> -->
+        </view>
+        <view class="addr-details">
+            <view class="label">手机</view>
+            <view class="label-right">
+                <input name="phone" auto-height placeholder="11位手机号"  value="{{ob.phone}}"/>
+            </view>
+        </view>
+        <!-- <view class="addr-details">
+            <view class="label">学校</view>
+            <view class="label-right">
+                <input  name="school" auto-height placeholder="请输入学校名称"  value="{{ob.school}}"/>
+            </view>
+        </view> -->
+        <view class="addr-details">
+            <switch checked="{{ob.switch}}" name="switch" /><view class="">开放查找联系方式</view> 
+        </view>
+    </view>
+    <button type="warn" class="save-btn" formType="submit">保存</button>
+    <!-- <button type="default" class="save-btn" bindtap="deleteAddress">删除该地址</button> -->
+    <button type="default" class="cancel-btn" bindtap="bindCancel">取消</button>
+    </form>
+</view>

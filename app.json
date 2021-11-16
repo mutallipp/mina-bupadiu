@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/index",
+    "pages/my/index",
+    "pages/my/myinfo",
+    "pages/user/detail",
+    "pages/my/getcartinfo/index",
+    "pages/my/managecart/card",
+    "pages/my/contect/contect",
+    "pages/my/cart/index",
+    "pages/upload/card",
+    "pages/upload/agreement",
+    "pages/my/us/us",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校内一卡通查找平台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "box-shadow": "0 0 6px 0",
+    "list": [
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "images/nav/home-off.png",
+        "selectedIconPath": "images/nav/home-on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/upload/card",
+        "iconPath": "images/nav/post.png",
+        "selectedIconPath": "images/nav/post.png",
+        "text": "一卡通"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/nav/my-off.png",
+        "selectedIconPath": "images/nav/my-on.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

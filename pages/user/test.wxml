@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<view class="container" hidden="{{loadingMoreHidden ? false : true}}" >
+  <!--搜索框-->
+  <view wx:if="{{result}}" class="search-view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(105,195,170, 1), rgba(105,195,170, 0.3))' :( scrollTop<200 ? 'rgba(105,195,170,'+(scrollTop/400+0.3) +')' : 'rgba(105,195,170,1)')  }} ">
+    <view class="search-content">
+      <image src="/images/search-pic.png" class="search-icon" />
+      <textarea auto-height placeholder="请输入卡号搜索" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' value='{{searchInput}}'>
+      </textarea>
+      <button class='search-btn' bindtap="toSearch">搜索</button>
+    </view>
+  </view>
+  <view wx:else class="search-view-conter" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(105,195,170, 1), rgba(105,195,170, 0.3))' :( scrollTop<200 ? 'rgba(105,195,170,'+(scrollTop/400+0.3) +')' : 'rgba(105,195,170,1)')  }} ">
+    <view class="search-content">
+      <image src="/images/search-pic.png" class="search-icon" />
+      <input placeholder="请输入卡号搜索" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput'>
+      </input>
+      <button class='search-btn' bindtap="toSearch">搜索</button>
+    </view>
+  </view>
+<!-- 结果显示 -->
+  <view class="goods-container" wx:if="{{result}}" >
+    <view class="goods-box"   bindtap="toDetailsTap">
+      <view class="img-box">
+        <image wx:if="{{result.image}}" src="{{result.image}}" class="image" mode="aspectFill" lazy-load="true" />
+        <image wx:else src="/images/card1.jpg" class="image" mode="aspectFill" lazy-load="true" />
+      </view>
+      <!-- <view class="goods-title">卡号： {{result.card_number}}</view> -->
+      <!-- <text class='discraption'>请联系他找回你自己的一卡通。</text> -->
+      <view style='display:flex;'>
+      
+      <view class="goods-price">卡号： {{card_number}}</view>
+        <!-- <view wx:if="{{item.price && item.price > 0 && item.min_price != item.price}}" class="goods-price" style='color:#aaa;text-decoration:line-through'>N {{result.card_number}}</view> -->
+      </view>
+    </view>
+  </view>
+  <view hidden="{{content ? false : true}}" class="no-more-goods">{{content}}</view>
+  <view hidden="{{user_phone ? false : true}}" class="no-more-goods">{{user_phone}}</view>
+  <!-- 如果没找到一卡通 -->
+</view>

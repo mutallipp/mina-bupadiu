@@ -1,0 +1,24 @@
+<view class="container">
+    <form bindsubmit="bindSaveTap" report-submit="true" >
+    <view class="form-box">
+        <view class="userinfo"  >
+            <image wx:if="{{logo}}"  class="userinfo-avatar" catchtap="chooseImageTap" src="{{logo}}" background-size="cover"></image>
+	      </view>
+        <view class="addr-details">
+            <view class="label">卡号</view>
+            <view class="label-right">
+                <textarea name="name" auto-height placeholder="请输入卡号"  value="{{card_number}}"/>
+            </view>
+        </view>
+         <view class="addr-details">
+            <checkbox-group name="checkbox" bindchange="checkbox">
+             <view class="labe2"><checkbox value="checkbox" />发布一卡通信息前请先查看<text class='xieyi' bindtap='xieyi'>免责声明</text></view>
+            </checkbox-group>
+          </view>
+    </view>
+    <!-- <label><checkbox value="" checked="{{false}}" />协议书</label> -->
+    <button wx:if="{{checkbox}}" type="warn" class="save-btn" formType="submit">立即发布</button>
+    <!-- <button type="default" class="save-btn" bindtap="deleteAddress">删除该地址</button> -->
+    <button wx:else type="default" class="cancel-btn" bindtap='checkbox_cancel' >立即发布</button>
+    </form>
+</view>

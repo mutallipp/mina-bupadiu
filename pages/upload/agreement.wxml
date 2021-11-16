@@ -1,0 +1,12 @@
+<!--pages/my/us.wxml-->
+<view>
+  <text class='title'>免责声明</text>
+  <view>
+    <text class='content'decode="{{true}}">1.当失主（指的是你上传此卡的用户）搜索此卡号时，我们会向对方提供您的联系方式。
+注：当只有失主搜索才会提供联系方式，其他人搜获不会提供。
+2.当因提供联系方式产生的任何结果均与本平台无关。
+    </text>
+  </view>
+  <button  type="warn" class="save-btn" bindtap='agreement'>我已阅读</button>
+</view>
+

@@ -1,0 +1,27 @@
+ <view class="container"  wx:if="{{card_number}}">
+    <view class="order-list">
+        <view class="a-order" >
+            <view class="order-date" wx:if="{{card_number}}">
+                <view class="date-box">卡号:{{card_number}}</view>   
+            </view>
+            <view class="goods-info" wx:if="{{content}}" >
+                <view class="goods-des">
+                   <view>{{content}} </view>
+                </view>
+            </view> 
+            <view >
+                <scroll-view class="goods-img-container" scroll-x="true">
+                    <view class="img-box" data-url='{{picture}}' bindtap='click_image' >
+                        <image src="{{picture}}" class="goods-img"></image>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="price-box" wx:if="{{user_phone}}" bindtap='makephone'>
+                <view class="total-price">{{user_phone}}</view>
+                <!-- <view class="btn cancel-btn">取消订单</view> -->
+                <view  >联系Ta</view>
+            </view>  
+        </view>
+
+    </view>
+  </view>
